@@ -1,15 +1,19 @@
-import Vue from 'vue';
-import Vuex from 'vuex';
+import Vue from 'vue'
+import Vuex from 'vuex'
 
-Vue.use(Vuex);
+import { GlobalState } from './type'
+import { MUTATIONS } from './mutations'
 
-export default new Vuex.Store({
+Vue.use(Vuex)
+
+export default new Vuex.Store<GlobalState>({
   state: {
+    source: {
+      type: 'ultisnips',
+      content: '',
+    },
   },
-  mutations: {
-  },
-  actions: {
-  },
-  modules: {
-  },
-});
+  mutations: MUTATIONS,
+  actions: {},
+  modules: {},
+})
