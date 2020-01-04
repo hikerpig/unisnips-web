@@ -1,6 +1,12 @@
 <template>
   <div class="result-panel">
     <div class="result-panel__header">
+      <v-tabs fixed-tabs background-color="indigo lighten-1" dark v-model="tabValue">
+        <v-tab v-for="item in resultOptions" :key="item.value" :value="item.value">
+          {{ item.label }}
+        </v-tab>
+      </v-tabs>
+
       <v-row justify="space-around" align-content="center">
         <v-col>
           <v-select
@@ -21,7 +27,12 @@
       </v-row>
     </div>
     <div class="result-panel__content">
-      <div id="result"></div>
+      <div v-show="!shouldShowDebug" id="result"></div>
+      <div v-show="shouldShowDebug">
+        <DefinitionItem v-for="def in definitions" :key="def.trigger"
+          :definition="def"
+        />
+      </div>
     </div>
   </div>
 </template>
@@ -30,6 +41,12 @@
 #result {
   .CodeMirror {
     padding: 10px;
+  }
+}
+
+.result-panel {
+  .definition-item {
+    margin-bottom: 10px;
   }
 }
 
@@ -61,7 +78,10 @@ import CodeMirror, { Editor } from 'codemirror'
 
 import { SnippetDefinition, ParseOptions } from '@unisnips/core'
 import { convert } from '@unisnips/unisnips'
+import ULTISNIPS_PLUGIN from '@unisnips/ultisnips'
 import { GlobalState } from 'src/store/type'
+import { findPosAndItem } from 'src/util/util'
+import DefinitionItem from 'src/components/result/DefinitionItem.vue'
 
 import 'codemirror/mode/javascript/javascript'
 import 'codemirror/mode/coffeescript/coffeescript'
@@ -73,14 +93,19 @@ const TARGET_MODE_MAP = {
   sublime: 'xml',
 }
 
-@Component({})
+@Component({
+  components: {
+    DefinitionItem,
+  }
+})
 export default class ResultPanel extends Vue {
   resultCm: Editor
 
   @State('source') source: GlobalState['source']
 
   target = 'vscode'
-  shouldAutoGenerate = false
+  shouldAutoGenerate = true
+  definitions: SnippetDefinition[] = []
 
   targetOptions = [
     { value: 'vscode', label: 'vscode' },
@@ -88,8 +113,27 @@ export default class ResultPanel extends Vue {
     { value: 'atom', label: 'Atom' },
   ]
 
+  resultType = 'result'
+  resultOptions = [
+    { value: 'result', label: 'Result' },
+    { value: 'debug', label: 'Debug' },
+  ]
+
   generation = {
     content: '',
+  }
+
+  get tabValue() {
+    const { pos } = findPosAndItem(this.resultOptions, (o) => o.value === this.resultType)
+    return pos
+  }
+
+  set tabValue(v) {
+    this.resultType = this.resultOptions[v].value
+  }
+
+  get shouldShowDebug() {
+    return this.resultType === 'debug'
   }
 
   @Watch('target')
@@ -101,6 +145,7 @@ export default class ResultPanel extends Vue {
   mounted() {
     this.initObservers()
     this.initCodeMirror()
+    this.updateByContent()
   }
 
   initCodeMirror() {
@@ -132,8 +177,11 @@ export default class ResultPanel extends Vue {
       target: this.target,
     })
     // console.log(result)
-    // this.generation.content = result.content
     this.resultCm.setValue(result.content)
+
+    const { definitions } = ULTISNIPS_PLUGIN.parse(content)
+    console.log(definitions)
+    this.definitions = definitions
   }
 
   updateCodeMirrorByTarget() {
