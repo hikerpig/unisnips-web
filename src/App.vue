@@ -1,5 +1,5 @@
 <template>
-  <v-app id="app">
+  <v-app>
     <v-app-bar dense dark app class="app-header">
       <v-toolbar-title @click="handleIconClick">
         <!-- <router-link to="/">UniSnips</router-link> -->

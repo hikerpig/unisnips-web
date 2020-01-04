@@ -19,26 +19,30 @@
 </style>
 
 <script lang="ts">
+import { Component, Prop, Watch } from 'vue-property-decorator'
+import Vue from 'vue'
+
 import SourcePanel from '@/components/SourcePanel.vue'
 import ResultPanel from 'src/components/ResultPanel.vue'
 
-export default {
-  name: 'home',
+@Component({
   components: {
     SourcePanel,
     ResultPanel,
   },
-  methods: {
-    onResize() {
-      // adjust codemirror size so they can fit full the screen
-      // console.log('on resize')
-      const codeMirrorEles = this.$el.querySelectorAll('.CodeMirror')
-      const screenHeight = window.innerHeight
-      codeMirrorEles.forEach(ele => {
-        const oldBcr = ele.getBoundingClientRect()
-        ele.style.height = `${screenHeight - oldBcr.top}px`
-      })
-    },
-  },
+})
+export default class HomePage extends Vue {
+  $el: HTMLDivElement
+
+  onResize() {
+    // adjust codemirror size so they can fit full the screen
+    // console.log('on resize')
+    const codeMirrorEles = this.$el.querySelectorAll('.CodeMirror')
+    const screenHeight = window.innerHeight
+    codeMirrorEles.forEach((ele: any) => {
+      const oldBcr = ele.getBoundingClientRect()
+      ele.style.height = `${screenHeight - oldBcr.top}px`
+    })
+  }
 }
 </script>
