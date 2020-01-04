@@ -1,29 +1,10 @@
 # unisnips-web
 
-## Project setup
-```
-yarn install
-```
+A web app for [unisnips](https://github.com/hikerpig/unisnips) project. Convert your ultisnips snippets to other platforms.
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+<!-- [See the site]() -->
 
-### Compiles and minifies for production
-```
-yarn build
-```
 
-### Run your unit tests
-```
-yarn test:unit
-```
+# Acknowledgment
 
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Inspired by [snippet generator](https://snippet-generator.app)
