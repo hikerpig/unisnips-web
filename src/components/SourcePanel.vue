@@ -1,12 +1,7 @@
 <template>
   <div class="source-panel">
     <div class="source-panel__header">
-      <v-tabs
-        fixed-tabs
-        background-color="indigo lighten-1"
-        dark
-        v-model="tabValue"
-      >
+      <v-tabs fixed-tabs background-color="indigo lighten-1" dark v-model="tabValue">
         <v-tab v-for="item in sourceOptions" :key="item.value" :value="item.value">
           {{ item.label }}
         </v-tab>
@@ -27,9 +22,7 @@ import { EXAMPLES } from 'src/settings/example'
 
 import { GlobalState } from 'src/store/type'
 
-@Component({
-
-})
+@Component({})
 export default class SourcePanel extends Vue {
   editor: Editor
 
@@ -53,7 +46,7 @@ export default class SourcePanel extends Vue {
   get tabValue() {
     for (let i = 0; i < this.sourceOptions.length; i++) {
       const item = this.sourceOptions[i]
-      if (item.value === this.sourceType) return i
+      if (item.value === this.sourceType) { return i }
     }
     return 0
   }
@@ -87,7 +80,7 @@ export default class SourcePanel extends Vue {
       const content = editor.getValue()
       try {
         this.$store.commit('UPDATE_SOURCE', {
-          content: content,
+          content,
         })
       } catch (error) {
         console.error(error)

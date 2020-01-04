@@ -137,7 +137,7 @@ export default class ResultPanel extends Vue {
   }
 
   updateCodeMirrorByTarget() {
-    let mode = (TARGET_MODE_MAP as any)[this.target]
+    const mode = (TARGET_MODE_MAP as any)[this.target]
     // console.log('mode', mode)
     this.resultCm.setOption('mode', mode)
   }

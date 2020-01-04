@@ -6,6 +6,6 @@ snippet prom "Promise"
 new Promise((resolve, reject) => {
 })
 endsnippet
-    `
-  }
+    `,
+  },
 ]
