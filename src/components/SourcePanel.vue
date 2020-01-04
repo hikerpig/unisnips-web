@@ -1,10 +1,16 @@
 <template>
   <div class="source-panel">
     <div class="source-panel__header">
-      <label>Source: </label>
-      <select v-model="sourceType">
-        <option v-for="item in sourceOptions" :key="item.value" :value="item.value">{{ item.label }}</option>
-      </select>
+      <v-tabs
+        fixed-tabs
+        background-color="indigo lighten-1"
+        dark
+        v-model="tabValue"
+      >
+        <v-tab v-for="item in sourceOptions" :key="item.value" :value="item.value">
+          {{ item.label }}
+        </v-tab>
+      </v-tabs>
     </div>
     <div id="source" ref="codemirror"></div>
   </div>
@@ -42,6 +48,21 @@ export default class SourcePanel extends Vue {
     this.$store.commit('UPDATE_SOURCE', {
       type: v,
     })
+  }
+
+  get tabValue() {
+    for (let i = 0; i < this.sourceOptions.length; i++) {
+      const item = this.sourceOptions[i]
+      if (item.value === this.sourceType) return i
+    }
+    return 0
+  }
+
+  set tabValue(v) {
+    const item = this.sourceOptions[v]
+    if (item) {
+      this.sourceType = item.value
+    }
   }
 
   get shouldShowSnippetGenerator() {

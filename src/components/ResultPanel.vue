@@ -1,14 +1,27 @@
 <template>
   <div class="result-panel">
     <div class="result-panel__header">
-      <label>Target: </label>
-      <select v-model="target">
-        <option v-for="item in targetOptions" :key="item.value" :value="item.value">{{ item.label }}</option>
-      </select>
+      <v-row justify="space-around" align-content="center">
+        <v-col>
+          <v-select
+            v-model="target"
+            :items="targetOptions"
+            hide-details
+            outlined
+            dense
+            item-text="label"
+            item-value="value"
+          >
+          </v-select>
+        </v-col>
+        <v-col>
+          <v-switch dense inset hide-details v-model="shouldAutoGenerate" label="Auto Generate">
+          </v-switch>
+        </v-col>
+      </v-row>
     </div>
     <div class="result-panel__content">
       <div id="result"></div>
-      <!-- <pre>{{ generation.content }}</pre> -->
     </div>
   </div>
 </template>
@@ -20,6 +33,23 @@
   }
 }
 
+.result-panel__header {
+  .row {
+    height: 48px;
+    padding: 0 10px;
+  }
+  .v-input--selection-controls {
+    margin-top: 0;
+  }
+
+  .v-input__slot {
+    margin-bottom: 0 !important;
+  }
+
+  .v-input--switch {
+    padding-top: 10px;
+  }
+}
 </style>
 
 <script lang="ts">
@@ -43,15 +73,14 @@ const TARGET_MODE_MAP = {
   sublime: 'xml',
 }
 
-@Component({
-
-})
+@Component({})
 export default class ResultPanel extends Vue {
   resultCm: Editor
 
   @State('source') source: GlobalState['source']
 
   target = 'vscode'
+  shouldAutoGenerate = false
 
   targetOptions = [
     { value: 'vscode', label: 'vscode' },
@@ -66,7 +95,7 @@ export default class ResultPanel extends Vue {
   @Watch('target')
   onTargetChange() {
     this.updateByContent(this.source.content)
-    this.updateByTarget()
+    this.updateCodeMirrorByTarget()
   }
 
   mounted() {
@@ -78,17 +107,25 @@ export default class ResultPanel extends Vue {
     const resultEle = document.getElementById('result') as HTMLDivElement
 
     this.resultCm = CodeMirror(resultEle, {
+      readOnly: true,
     })
-    this.updateByTarget()
+    this.updateCodeMirrorByTarget()
   }
 
   initObservers() {
-    this.$watch('source.content', (content) => {
-      this.updateByContent(content)
+    this.$watch('source.content', content => {
+      if (this.shouldAutoGenerate) {
+        this.updateByContent(content)
+      }
+    })
+    this.$watch('shouldAutoGenerate', () => {
+      if (this.shouldAutoGenerate) {
+        this.updateByContent()
+      }
     })
   }
 
-  updateByContent(content: string) {
+  updateByContent(content = this.source.content) {
     const result = convert({
       inputContent: content,
       source: 'ultisnips',
@@ -99,9 +136,9 @@ export default class ResultPanel extends Vue {
     this.resultCm.setValue(result.content)
   }
 
-  updateByTarget() {
+  updateCodeMirrorByTarget() {
     let mode = (TARGET_MODE_MAP as any)[this.target]
-    console.log('mode', mode)
+    // console.log('mode', mode)
     this.resultCm.setOption('mode', mode)
   }
 }

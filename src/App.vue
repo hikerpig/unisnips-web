@@ -1,42 +1,40 @@
 <template>
-  <div id="app">
-    <nav id="nav">
-      <div class="logo">
+  <v-app id="app">
+    <v-app-bar dense dark app class="app-header">
+      <v-toolbar-title @click="handleIconClick">
+        <!-- <router-link to="/">UniSnips</router-link> -->
         UniSnips
-      </div>
-      <router-link to="/">Converter</router-link>
-      <!-- <router-link to="/about">About</router-link> -->
-    </nav>
-    <router-view/>
-  </div>
+      </v-toolbar-title>
+      <!-- <nav>
+        <router-link to="/">UniSnips</router-link>
+        <router-link to="/about">About</router-link>
+      </nav> -->
+    </v-app-bar>
+
+    <v-content>
+      <router-view />
+    </v-content>
+  </v-app>
 </template>
 
 <style lang="scss">
-@import "src/styles/common.scss";
+@import 'src/styles/common.scss';
 
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
-}
-
-#nav {
-  display: flex;
-  padding-top: 10px;
-  padding-bottom: 10px;
-
-  .logo {
-    padding-right: 20px;
-  }
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+.app-header {
+  .v-toolbar__title {
+    cursor: pointer;
   }
 }
 </style>
+
+<script>
+export default {
+  methods: {
+    handleIconClick() {
+      if (this.$route.name !== 'home') {
+        this.$router.push({ name: 'home' })
+      }
+    },
+  }
+}
+</script>

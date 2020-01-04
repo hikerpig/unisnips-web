@@ -29,7 +29,8 @@
       "dom",
       "dom.iterable",
       "scripthost"
-    ]
+    ],
+    "types": ["vuetify"]
   },
   "include": [
     "src/**/*.ts",
