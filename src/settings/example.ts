@@ -1,6 +1,26 @@
+import { SnippetSourceItem } from 'src/store/type'
+
+const HONZA_REPO_DIR = 'https://raw.githubusercontent.com/honza/vim-snippets/master/UltiSnips'
+
+export const VIM_SNIPPETS_EXAMPLES = [
+  'javascript-node',
+  'python',
+  'django',
+  'html',
+  'css',
+  'rust',
+  'markdown',
+  'robot',
+].map((name) => {
+  return {
+    name: `vim-snippets/${name}.snippets`,
+    remoteUrl: `${HONZA_REPO_DIR}/${name}.snippets`,
+  } as Partial<SnippetSourceItem>
+})
+
 export const EXAMPLES = [
   {
-    name: 'intro',
+    name: 'Intro',
     content: `snippet with_default "with default value" b
 function \${1:name} {
   \${2://body}

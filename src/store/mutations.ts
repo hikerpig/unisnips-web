@@ -17,4 +17,8 @@ export const MUTATIONS = {
   },
   // UPDATE_GENERATOR_ITEMS(state: GlobalState, payload: { }) {
   // },
+  SET_SNIPPET_SOURCE_ITEM(state: GlobalState, payload: GlobalState['snippetSourceItem']) {
+    // state.snippetSourceItem = Object.assign(state.snippetSourceItem, payload)
+    state.snippetSourceItem = payload
+  },
 }

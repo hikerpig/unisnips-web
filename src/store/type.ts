@@ -1,5 +1,11 @@
 // import { TokenNode } from '@unisnips/core'
 import { Position } from 'unist'
+export interface SnippetSourceItem {
+  name: string
+  type: string
+  content?: string
+  remoteUrl?: string
+}
 
 export interface GlobalState {
   swState: {
@@ -13,4 +19,5 @@ export interface GlobalState {
     type: string
     position: Position
   }>
+  snippetSourceItem: SnippetSourceItem
 }

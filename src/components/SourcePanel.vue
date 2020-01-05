@@ -56,6 +56,7 @@ export default class SourcePanel extends Vue {
 
   @State('source') source: GlobalState['source']
   @State('highlightItems') highlightItems: GlobalState['highlightItems']
+  @State('snippetSourceItem') snippetSourceItem: GlobalState['snippetSourceItem']
 
   get sourceType() {
     return this.source.type
@@ -141,9 +142,14 @@ export default class SourcePanel extends Vue {
         )
       })
     })
+
+    this.$watch('snippetSourceItem', (item) => {
+      // console.log('snippetSourceItem changed', item)
+      this.loadExampleItem(item)
+    })
   }
 
-  loadExampleItem(item: any) {
+  loadExampleItem(item: { content: string }) {
     if (item.content) {
       this.editor.setValue(item.content)
     }
