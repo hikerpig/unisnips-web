@@ -38,8 +38,10 @@ export default class HomePage extends Vue {
     // adjust codemirror size so they can fit full the screen
     // console.log('on resize')
     const codeMirrorEles = this.$el.querySelectorAll('.CodeMirror')
+    const expandHeightEles = this.$el.querySelectorAll('.js-expand-full-height')
     const screenHeight = window.innerHeight
-    codeMirrorEles.forEach((ele: any) => {
+    const eleList = Array.from(codeMirrorEles).concat(Array.from(expandHeightEles))
+    eleList.forEach((ele: any) => {
       const oldBcr = ele.getBoundingClientRect()
       ele.style.height = `${screenHeight - oldBcr.top}px`
     })

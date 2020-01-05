@@ -3,7 +3,8 @@
     :ripple="false"
   >
     <header class="d-flex justify-space-between">
-      <b class="text--primary">{{ definition.trigger }}</b>
+      <v-chip label color="yellow accent-4" :title="`trigger:${definition.trigger}`">{{ definition.trigger }}</v-chip>
+      <!-- <b>{{ definition.trigger }}</b> -->
       <span>{{ definition.description }}</span>
     </header>
     <div v-show="expanded">

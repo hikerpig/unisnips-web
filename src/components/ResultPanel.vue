@@ -10,6 +10,7 @@
       <v-row justify="space-around" align-content="center">
         <v-col>
           <v-select
+            v-show="!shouldShowDebug"
             v-model="target"
             :items="targetOptions"
             hide-details
@@ -26,10 +27,10 @@
         </v-col>
       </v-row>
     </div>
-    <div class="result-panel__content">
+    <div class="result-panel__content js-expand-full-height">
       <div v-show="!shouldShowDebug" id="result"></div>
       <div v-show="shouldShowDebug">
-        <DefinitionItem v-for="def in definitions" :key="def.trigger"
+        <DefinitionItem v-for="def in definitions" :key="def.trigger+def.description"
           :definition="def"
         />
       </div>
@@ -66,6 +67,10 @@
   .v-input--switch {
     padding-top: 10px;
   }
+}
+
+.result-panel__content {
+  overflow-y: scroll;
 }
 </style>
 
