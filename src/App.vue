@@ -21,6 +21,8 @@
 @import 'src/styles/common.scss';
 
 .app-header {
+  background-color: #212121 !important;
+
   .v-toolbar__title {
     cursor: pointer;
   }

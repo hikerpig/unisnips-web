@@ -1,7 +1,7 @@
 <template>
   <div class="source-panel">
     <div class="source-panel__header">
-      <v-tabs fixed-tabs background-color="indigo lighten-1" dark v-model="tabValue">
+      <v-tabs fixed-tabs color="yellow darken-1" dark v-model="tabValue">
         <v-tab v-for="item in sourceOptions" :key="item.value" :value="item.value">
           {{ item.label }}
         </v-tab>

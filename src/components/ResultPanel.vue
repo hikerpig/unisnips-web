@@ -1,7 +1,7 @@
 <template>
   <div class="result-panel">
     <div class="result-panel__header">
-      <v-tabs fixed-tabs background-color="indigo lighten-1" dark v-model="tabValue">
+      <v-tabs fixed-tabs background-color="grey darken-2" color="yellow darken-1" dark v-model="tabValue">
         <v-tab v-for="item in resultOptions" :key="item.value" :value="item.value">
           {{ item.label }}
         </v-tab>
