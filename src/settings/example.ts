@@ -1,14 +1,23 @@
 export const EXAMPLES = [
   {
-    name: 'javascript',
-    content: `
-snippet fun "function(fun)"
-function \${1:function_name}(\${2:argument}) {
+    name: 'intro',
+    content: `snippet with_default "with default value" b
+function \${1:name} {
+  \${2://body}
 }
 endsnippet
 
-snippet test_visual "visual" b
-\${VISUAL}
+snippet test_visual "visual"
+return \${VISUAL}
+endsnippet
+
+snippet test_shell "shell code"
+should print date: \`! date\`
+endsnippet
+
+# js block is not supported in UltiSnips
+snippet test_js "javascript code"
+should print date: \`!js new Date()\`
 endsnippet
     `,
   },

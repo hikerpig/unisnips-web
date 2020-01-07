@@ -30,6 +30,8 @@ import { EXAMPLES } from 'src/settings/example'
 import { Point } from 'unist'
 import { GlobalState } from 'src/store/type'
 
+import 'src/util/codemirror-mode/snippets'
+
 @Component({})
 export default class SourcePanel extends Vue {
   editor: Editor
