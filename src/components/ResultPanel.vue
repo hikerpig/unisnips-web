@@ -119,6 +119,7 @@ export default class ResultPanel extends Vue {
   ]
 
   resultType = 'result'
+  // resultType = 'debug' // @@DEBUG:
   resultOptions = [
     { value: 'result', label: 'Result' },
     { value: 'debug', label: 'Debug' },
@@ -185,7 +186,7 @@ export default class ResultPanel extends Vue {
     this.resultCm.setValue(result.content)
 
     const { definitions } = ULTISNIPS_PLUGIN.parse(content)
-    console.log(definitions)
+    console.debug('definitions', definitions)
     this.definitions = definitions
   }
 

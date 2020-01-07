@@ -7,9 +7,8 @@ function \${1:function_name}(\${2:argument}) {
 }
 endsnippet
 
-snippet prom "Promise"
-new Promise((resolve, reject) => {
-})
+snippet test_visual "visual" b
+\${VISUAL}
 endsnippet
     `,
   },

@@ -12,6 +12,7 @@ export default new Vuex.Store<GlobalState>({
       type: 'ultisnips',
       content: '',
     },
+    highlightItems: [],
   },
   mutations: MUTATIONS,
   actions: {},

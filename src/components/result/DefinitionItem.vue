@@ -40,7 +40,6 @@ import { SnippetDefinition, ParseOptions } from '@unisnips/core'
 
 import UPlaceholder from './UPlaceholder.vue'
 
-// TODO: hover highlight
 @Component({
   components: {
     UPlaceholder,

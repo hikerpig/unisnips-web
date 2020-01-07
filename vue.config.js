@@ -19,5 +19,10 @@ module.exports = {
   ],
   pwa: {
     themeColor: '#FBC02D',
+  },
+  devServer: {
+    allowedHosts: [
+      "unisnips-web.local-dev.com"
+    ]
   }
 }
