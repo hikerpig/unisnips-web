@@ -14,6 +14,21 @@
     <v-content>
       <router-view />
     </v-content>
+
+    <v-snackbar
+      color="indigo lighten-1"
+      v-model="updatedSnackbarVisible"
+      :timeout="0"
+    >
+      <span>New content is available, please refresh.</span>
+      <v-btn
+        color="yellow"
+        text
+        @click="handleRefreshClick"
+      >
+        Refresh
+      </v-btn>
+    </v-snackbar>
   </v-app>
 </template>
 
@@ -30,8 +45,31 @@
 </style>
 
 <script>
+import { mapState } from 'vuex'
 export default {
+  data() {
+    return {
+      updatedSnackbarVisible: false,
+    }
+  },
+  computed: {
+    ...mapState(['swState']),
+  },
+  mounted() {
+    this.initSwStateWatcher()
+  },
   methods: {
+    initSwStateWatcher() {
+      this.$watch('swState.updated', (v) => {
+        if (v) {
+          this.updatedSnackbarVisible = true
+        }
+      })
+    },
+    handleRefreshClick() {
+      this.updatedSnackbarVisible = false
+      window.location.reload()
+    },
     handleIconClick() {
       if (this.$route.name !== 'home') {
         this.$router.push({ name: 'home' })

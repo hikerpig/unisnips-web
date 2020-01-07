@@ -3,6 +3,9 @@ import Vue from 'vue'
 import { GlobalState } from './type'
 
 export const MUTATIONS = {
+  UPDATE_SW_STATE(state: GlobalState, payload: Partial<GlobalState['swState']>) {
+    Object.assign(state.swState, payload)
+  },
   UPDATE_SOURCE(state: GlobalState, payload: Partial<GlobalState['source']>) {
     Object.assign(state.source, payload)
   },

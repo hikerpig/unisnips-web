@@ -2,6 +2,9 @@
 import { Position } from 'unist'
 
 export interface GlobalState {
+  swState: {
+    updated: boolean
+  }
   source: {
     type: string
     content: string

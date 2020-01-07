@@ -8,6 +8,9 @@ Vue.use(Vuex)
 
 export default new Vuex.Store<GlobalState>({
   state: {
+    swState: {
+      updated: false,
+    },
     source: {
       type: 'ultisnips',
       content: '',
