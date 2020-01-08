@@ -1127,25 +1127,25 @@
   dependencies:
     "@unisnips/core" "^0.3.0-alpha.1"
 
-"@unisnips/ultisnips@^0.3.0-alpha.1":
-  version "0.3.0-alpha.1"
-  resolved "https://registry.yarnpkg.com/@unisnips/ultisnips/-/ultisnips-0.3.0-alpha.1.tgz#12b67a707b963a7d21005769191bc393123a84f3"
-  integrity sha512-8+zdEN36i8RepSaeKH+aHnAwtQYoN8GCThIzLrcb5dBtjE69HmZi1A4WcvFUL19JoXBcQf2ertdPT1y1/zA0AQ==
+"@unisnips/ultisnips@^0.4.0-alpha.0":
+  version "0.4.0-alpha.0"
+  resolved "https://registry.yarnpkg.com/@unisnips/ultisnips/-/ultisnips-0.4.0-alpha.0.tgz#cf352f3ff389695ac3f3b955a3c8710d4e96cf77"
+  integrity sha512-LMuZeMBfNq0KjwJdUOBjh+IAxHbVYrW/zT1/aA2Mh+mHfs0CS4SDxrO9aqgsnI4RNlkoyvKj/33V+B9ji3nIAw==
   dependencies:
     "@bestminr/control-flow" "^0.1.0"
     "@types/lodash.omit" "*"
     "@unisnips/core" "^0.3.0-alpha.1"
     lodash.omit "^4.5.0"
 
-"@unisnips/unisnips@^0.3.2-alpha.0":
-  version "0.3.2-alpha.0"
-  resolved "https://registry.yarnpkg.com/@unisnips/unisnips/-/unisnips-0.3.2-alpha.0.tgz#84c1d1ae4a242301971022f8cc943e13fea3f58b"
-  integrity sha512-InTSDAVseNcRgcYznzkMh73eBREqn/gRcmEtq8ZVqRiu204LQYVKz4Vaz/gM0rMeYD2A6umVrjQf4pbgn2QW9g==
+"@unisnips/unisnips@^0.4.0-alpha.0":
+  version "0.4.0-alpha.0"
+  resolved "https://registry.yarnpkg.com/@unisnips/unisnips/-/unisnips-0.4.0-alpha.0.tgz#c3d843ad40d5552d2d49e0c7c823f8d91f7385df"
+  integrity sha512-itIl9x3ZS4atUfceyNxjEWrOJ+HBW0hhzVsExE2L9k0y+QwO2BYtoe1VaI2bh6aR+DbRtRQkwtbLFnEichgM1A==
   dependencies:
     "@unisnips/atom" "^0.3.0-alpha.1"
     "@unisnips/core" "^0.3.0-alpha.1"
     "@unisnips/sublime" "^0.3.0-alpha.1"
-    "@unisnips/ultisnips" "^0.3.0-alpha.1"
+    "@unisnips/ultisnips" "^0.4.0-alpha.0"
     "@unisnips/vscode" "^0.3.0-alpha.1"
     signale "^1.4.0"
     yargs "^15.0.2"
