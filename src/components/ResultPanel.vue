@@ -9,17 +9,25 @@
 
       <v-row justify="space-around" align-content="center">
         <v-col>
-          <v-select
+          <v-autocomplete
             v-show="!shouldShowDebug"
             v-model="target"
             :items="targetOptions"
             hide-details
             outlined
             dense
-            item-text="label"
             item-value="value"
+            item-text="label"
           >
-          </v-select>
+            <template v-slot:item="{ item }">
+              <img :src="item.img" class="result-panel__select-img">
+              <v-list-item-title v-html=" item.label "></v-list-item-title>
+            </template>
+            <template v-slot:selection="{ item, index }">
+              <img :src="item.img" class="result-panel__select-img">
+              <span class="caption">{{ item.label }}</span>
+            </template>
+          </v-autocomplete>
         </v-col>
         <v-col>
           <v-switch dense inset hide-details v-model="shouldAutoGenerate" label="Auto Generate">
@@ -72,6 +80,11 @@
 .result-panel__content {
   overflow-y: scroll;
 }
+
+.result-panel__select-img {
+  height: 1.5em;
+  margin-right: 10px;
+}
 </style>
 
 <script lang="ts">
@@ -85,6 +98,7 @@ import { SnippetDefinition, ParseOptions } from '@unisnips/core'
 import { convert } from '@unisnips/unisnips'
 import ULTISNIPS_PLUGIN from '@unisnips/ultisnips'
 import { GlobalState } from 'src/store/type'
+import { SHP } from 'src/util/paths'
 import { findPosAndItem } from 'src/util/util'
 import DefinitionItem from 'src/components/result/DefinitionItem.vue'
 
@@ -96,6 +110,10 @@ const TARGET_MODE_MAP = {
   vscode: 'javascript',
   atom: 'coffeescript',
   sublime: 'xml',
+}
+
+function getIconImg(name: string) {
+  return SHP(`/img/target-icons/${name}`)
 }
 
 @Component({
@@ -113,9 +131,9 @@ export default class ResultPanel extends Vue {
   definitions: SnippetDefinition[] = []
 
   targetOptions = [
-    { value: 'vscode', label: 'vscode' },
-    { value: 'sublime', label: 'Sublime Text' },
-    { value: 'atom', label: 'Atom' },
+    { value: 'vscode', label: 'vscode', img: getIconImg('vscode.png') },
+    { value: 'sublime', label: 'Sublime Text', img: getIconImg('sublime.png') },
+    { value: 'atom', label: 'Atom', img: getIconImg('atom.png')  },
   ]
 
   resultType = 'result'
