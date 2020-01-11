@@ -20,7 +20,7 @@
       v-model="updatedSnackbarVisible"
       :timeout="0"
     >
-      <span>New content is available, please refresh.</span>
+      <span>A new version of UniSnips is available.</span>
       <v-btn
         color="yellow"
         text

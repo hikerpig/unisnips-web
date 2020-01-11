@@ -21,8 +21,12 @@ export default function(store: any) {
       updatefound() {
         console.log('New content is downloading.')
       },
-      updated() {
-        console.log('New content is available; please refresh.')
+      updated(reg: ServiceWorkerRegistration) {
+        console.log('New version available; please refresh.')
+        if (reg.waiting && reg.waiting.state === 'installed') {
+          console.log('is installed, should post skip waiting')
+          reg.waiting.postMessage({type: 'SKIP_WAITING'})
+        }
         store.commit('UPDATE_SW_STATE', {
           updated: true,
         })
