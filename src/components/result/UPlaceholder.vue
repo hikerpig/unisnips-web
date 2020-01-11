@@ -14,9 +14,9 @@
       </template>
 
       <template>
-        <div v-if="token" class="u-placeholder__token">
-          <div>{{ token.type }}</div>
-          <pre>{{ tokenDataStr }}</pre>
+        <div v-if="marker" class="u-placeholder__marker">
+          <div>{{ marker.type }}</div>
+          <pre>{{ markerDataStr }}</pre>
         </div>
       </template>
     </Expandable>
@@ -35,7 +35,7 @@
     margin-right: 4px;
   }
 }
-.u-placeholder__token {
+.u-placeholder__marker {
   margin-left: 0.5em;
 }
 </style>
@@ -50,13 +50,6 @@ import { get } from 'lodash'
 
 import Expandable from 'src/components/result/Expandable.vue'
 
-function positionAdd(base: Point, p: Point, lineDelta = 0): Point {
-  return {
-    line: base.line + p.line + lineDelta,
-    column: p.column,
-  }
-}
-
 @Component({
   components: {
     Expandable,
@@ -68,8 +61,8 @@ export default class UPlaceholder extends Vue {
 
   isHover = false
 
-  get token(): TokenNode<any> {
-    return get(this.placeholder.extra, 'token')
+  get marker(): TokenNode<any> {
+    return get(this.placeholder.extra, 'marker')
   }
 
   get headerStr() {
@@ -83,30 +76,25 @@ export default class UPlaceholder extends Vue {
     return infoSegs.join(', ')
   }
 
-  get tokenDataStr() {
-    const tokenData = (this.token ? this.token.data : null) || {}
+  get markerDataStr() {
+    const markerData = (this.marker ? this.marker.data : null) || {}
     if (this.placeholder.description) {
-      tokenData.description = this.placeholder.description
+      markerData.description = this.placeholder.description
     }
-    return JSON.stringify(tokenData, null, 2)
+    return JSON.stringify(markerData, null, 2)
   }
 
   handleMouseEnter() {
-    // console.log('mouse enter')
-
     this.isHover = true
-    if (this.token) {
-      const codePosition = this.placeholder.codePosition
+    if (this.marker) {
+      // const codePosition = this.placeholder.codePosition
       const snipPosition = this.definition.position
-      const positionInFile: typeof codePosition = {
-        start: positionAdd(snipPosition.start, codePosition.start, 1),
-        end: positionAdd(snipPosition.start, codePosition.end, 1),
-      }
+      const positionInFile = this.placeholder.codePosition
       // console.log('position in file', JSON.stringify(positionInFile))
       this.$store.commit('UPDATE_HIGHLIGHT_ITEMS', {
         items: [
           {
-            type: 'token',
+            type: 'marker',
             position: positionInFile,
           },
         ],

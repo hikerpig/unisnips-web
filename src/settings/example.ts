@@ -19,6 +19,12 @@ endsnippet
 snippet test_js "javascript code"
 should print date: \`!js new Date()\`
 endsnippet
+
+snippet nested "nested tabstop"
+function main() {
+  \${0:\${1://inner}}
+}
+endsnippet
     `,
   },
 ]
