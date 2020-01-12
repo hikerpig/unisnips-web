@@ -72,6 +72,8 @@ export default class UPlaceholder extends Vue {
       infoSegs.push(`index: ${this.placeholder.index}`)
     } else if (valueType === 'variable') {
       infoSegs.push(`variableName: ${this.placeholder.variable!.name}`)
+    } else if (valueType === 'script') {
+      infoSegs.push(`scriptType: ${this.placeholder.scriptInfo!.scriptType}`)
     }
     return infoSegs.join(', ')
   }

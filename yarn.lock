@@ -1106,57 +1106,57 @@
   dependencies:
     "@types/yargs-parser" "*"
 
-"@unisnips/atom@^0.4.0-alpha.1":
-  version "0.4.0-alpha.1"
-  resolved "https://registry.yarnpkg.com/@unisnips/atom/-/atom-0.4.0-alpha.1.tgz#26abb982fbe2626b4eb6a6a32910411d9834b7f2"
-  integrity sha512-Dd0s47Ei+ruzCOJNEp6bNWmT5OZHp7dA/WFKVvidkiquuFwMIpvAUZxAf5TSusOhsX3URIkqZFtx69geIUB8XQ==
+"@unisnips/atom@^0.4.0":
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/@unisnips/atom/-/atom-0.4.0.tgz#af32e25cde54588ee36cb78675f5da4a4856f3ec"
+  integrity sha512-+JcpetNeLTWoCy0BSf+ZsqzngcMIB4oLRBpy/94irVJC+eYz4R12LvcQMMn+krCszNPyiu3EUkUIGiaEmo5jCQ==
   dependencies:
-    "@unisnips/core" "^0.4.0-alpha.1"
+    "@unisnips/core" "^0.4.0"
 
-"@unisnips/core@^0.4.0-alpha.1":
-  version "0.4.0-alpha.1"
-  resolved "https://registry.yarnpkg.com/@unisnips/core/-/core-0.4.0-alpha.1.tgz#dbf7a794d00d5f194a91515190607d86707ed781"
-  integrity sha512-gxXVafAQclrJyLmobCmfx5MIpmjvsWIZ2UMASiHiYohdQ6mGCe4xp29JoSF5euPIod8MZi/8bZ68cqbl6CeHWg==
+"@unisnips/core@^0.4.0":
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/@unisnips/core/-/core-0.4.0.tgz#aa41f2aca0334cd9a0d7808b5286273d972eff57"
+  integrity sha512-xeDNFjRn4yqivOd8m2XHZGpyYmQS7bCVVRghbkavK6JOvPfAdDG4L5LyjrUkFI2P0PE6mW3eAXVVr7xDpYzi9A==
   dependencies:
     "@types/unist" "^2.0.3"
 
-"@unisnips/sublime@^0.4.0-alpha.1":
-  version "0.4.0-alpha.1"
-  resolved "https://registry.yarnpkg.com/@unisnips/sublime/-/sublime-0.4.0-alpha.1.tgz#e4fe6e05fcfada4a635b399fb9730db17bb19e70"
-  integrity sha512-mvloTI0wzCcTMreWVhn1t4Oi0sot+sj1HP7zS2uQTiMn5k+5N0QE/O0CkJ1KJV1fL57ZOoVPspUMs9I4KRmmyw==
+"@unisnips/sublime@^0.4.0":
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/@unisnips/sublime/-/sublime-0.4.0.tgz#069254265398d62711b3c84949acbdb5529c3cf4"
+  integrity sha512-UL6LfsmP9YSmmKxuAeRBUN0nmHy7n2goJCi4SllJuL5JzDC4s1gldY23kh+PKNsc+zWW+YRsqTECF6CJyFp94A==
   dependencies:
-    "@unisnips/core" "^0.4.0-alpha.1"
+    "@unisnips/core" "^0.4.0"
 
-"@unisnips/ultisnips@^0.4.0-alpha.1":
-  version "0.4.0-alpha.1"
-  resolved "https://registry.yarnpkg.com/@unisnips/ultisnips/-/ultisnips-0.4.0-alpha.1.tgz#6769d0d2e7435d8b66801dcbdfae01f9b977d4fe"
-  integrity sha512-WCsBUrNNPAJ2jdxfciMbhZ/pXWvgAAltbSaoCWhvyg+qzYR2eIY7K1rECbqYWbQhk0SI6q9OctNvccskm/4WsA==
+"@unisnips/ultisnips@^0.4.0":
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/@unisnips/ultisnips/-/ultisnips-0.4.0.tgz#208e8c2ef51b40d62b50a021276198c077bafc29"
+  integrity sha512-84SSKNV7Yj0Ldr/zqCklUCsCWCw8gZVHSrpR9pCv9Fz1My+F2/vw3ZPIBUm4YfienK3kfZNP510HDQABP00OkQ==
   dependencies:
     "@bestminr/control-flow" "^0.1.0"
     "@types/lodash.omit" "*"
-    "@unisnips/core" "^0.4.0-alpha.1"
+    "@unisnips/core" "^0.4.0"
     lodash.omit "^4.5.0"
 
-"@unisnips/unisnips@^0.4.0-alpha.1":
-  version "0.4.0-alpha.1"
-  resolved "https://registry.yarnpkg.com/@unisnips/unisnips/-/unisnips-0.4.0-alpha.1.tgz#01fad48ddf399d1d9d648984fd1240632d43d4f0"
-  integrity sha512-AcGsdkGJipTjX1X59IY5lwSkDT4YZY5emv5lLzjp63Omm+66ypTVFO7OsBVwGrbre8AmSnL7MYcvTP9n1AcGpw==
+"@unisnips/unisnips@^0.4.0":
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/@unisnips/unisnips/-/unisnips-0.4.0.tgz#e4fa7f52670f6bcc3bc9cb49d868146be5ce26ed"
+  integrity sha512-PUKQ/5QieY5hvRD8UrfsN5SCAVI1lE6JLKtw+Sr7m6hmUDKwSDzgWe1BVHTkxEYSC4VqHVV7Q1qhZmYMWubv1g==
   dependencies:
-    "@unisnips/atom" "^0.4.0-alpha.1"
-    "@unisnips/core" "^0.4.0-alpha.1"
-    "@unisnips/sublime" "^0.4.0-alpha.1"
-    "@unisnips/ultisnips" "^0.4.0-alpha.1"
-    "@unisnips/vscode" "^0.4.0-alpha.1"
+    "@unisnips/atom" "^0.4.0"
+    "@unisnips/core" "^0.4.0"
+    "@unisnips/sublime" "^0.4.0"
+    "@unisnips/ultisnips" "^0.4.0"
+    "@unisnips/vscode" "^0.4.0"
     signale "^1.4.0"
     yargs "^15.0.2"
 
-"@unisnips/vscode@^0.4.0-alpha.1":
-  version "0.4.0-alpha.1"
-  resolved "https://registry.yarnpkg.com/@unisnips/vscode/-/vscode-0.4.0-alpha.1.tgz#54a83081952e7ab968d5d6b8710444633c73dd1a"
-  integrity sha512-U1j4IaLX12NB5fFzfrOMpFYT/RnXP54vu7JX3h9IuBAYpmLpC1hslc84Q7DrgPO0Ez5wv1n8FbD5/+YB4qHjTQ==
+"@unisnips/vscode@^0.4.0":
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/@unisnips/vscode/-/vscode-0.4.0.tgz#c61fdfa0ef6fb5200f6a9c7e966b5e998c5b74e8"
+  integrity sha512-GRVeYIcHZ41JYGD/9CUq6N2Sq6dD4I8wBmtziI5uz9NKo+9NwDwTrqG5eIUv68uSrg6Tqcnj+qPSYXg8mJFJwA==
   dependencies:
     "@types/lodash.omit" "*"
-    "@unisnips/core" "^0.4.0-alpha.1"
+    "@unisnips/core" "^0.4.0"
     lodash.omit "^4.5.0"
 
 "@vue/babel-helper-vue-jsx-merge-props@^1.0.0":
