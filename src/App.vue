@@ -1,6 +1,11 @@
 <template>
   <v-app>
     <v-app-bar dense dark app class="app-header">
+      <v-toolbar-title>
+        <div class="logo">
+          <img :src="logoSrc" alt="logo">
+        </div>
+      </v-toolbar-title>
       <v-toolbar-title @click="handleIconClick">
         <!-- <router-link to="/">UniSnips</router-link> -->
         UniSnips
@@ -41,15 +46,29 @@
   .v-toolbar__title {
     cursor: pointer;
   }
+
+  .logo {
+    width: 1.5em;
+    height: 1.5em;
+    margin-right: 10px;
+
+    img {
+      max-height: 100%;
+      border-radius: 4px;
+    }
+  }
 }
 </style>
 
 <script>
 import { mapState } from 'vuex'
+import { SHP } from 'src/util/paths'
+
 export default {
   data() {
     return {
       updatedSnackbarVisible: false,
+      logoSrc: SHP('img/icons/icon.svg')
     }
   },
   computed: {
