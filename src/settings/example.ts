@@ -23,6 +23,10 @@ endsnippet
 snippet nested "nested tabstop"
 \${0:outer and \${1:inner}}
 endsnippet
+
+snippet tabstop_transformation "import vue component"
+import \${1/(.*)\\/([\\w]*)\\.vue/$2/g} from '\${1}'
+endsnippet
     `,
   },
 ]
