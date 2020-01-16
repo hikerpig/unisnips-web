@@ -89,9 +89,9 @@ export default class UPlaceholder extends Vue {
   handleMouseEnter() {
     this.isHover = true
     if (this.marker) {
-      // const codePosition = this.placeholder.codePosition
+      // const bodyPosition = this.placeholder.bodyPosition
       const snipPosition = this.definition.position
-      const positionInFile = this.placeholder.codePosition
+      const positionInFile = this.placeholder.bodyPosition
       // console.log('position in file', JSON.stringify(positionInFile))
       this.$store.commit('UPDATE_HIGHLIGHT_ITEMS', {
         items: [
