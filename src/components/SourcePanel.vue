@@ -7,7 +7,13 @@
         </v-tab>
       </v-tabs>
     </div>
-    <div id="source" ref="codemirror"></div>
+
+    <div class="source-panel__content js-expand-full-height">
+      <div v-show="shouldShowSource" id="source" ref="codemirror"></div>
+      <div v-show="shouldShowSnippetGenerator">
+        <SourceGenrator />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -29,16 +35,21 @@ import { EXAMPLES } from 'src/settings/example'
 
 import { Point } from 'unist'
 import { GlobalState } from 'src/store/type'
+import SourceGenrator from 'src/components/source/SourceGenrator.vue'
 
 import 'src/util/codemirror-mode/snippets'
 
-@Component({})
+@Component({
+  components: {
+    SourceGenrator,
+  }
+})
 export default class SourcePanel extends Vue {
   editor: Editor
 
   sourceOptions = [
     { value: 'ultisnips', label: 'UltiSnips' },
-    // { value: 'generator', label: 'Generator' },
+    { value: 'generator', label: 'Generator' },
   ]
 
   @State('source') source: GlobalState['source']
@@ -73,7 +84,12 @@ export default class SourcePanel extends Vue {
     return this.source.type === 'generator'
   }
 
+  get shouldShowSource() {
+    return this.sourceType === 'ultisnips'
+  }
+
   mounted() {
+    // this.sourceType = 'generator' // @@DEBUG:
     this.init()
     this.loadExampleItem(EXAMPLES[0])
     this.initWatchers()

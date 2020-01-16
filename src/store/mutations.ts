@@ -15,4 +15,6 @@ export const MUTATIONS = {
       Vue.set(state.highlightItems, i, item)
     }
   },
+  // UPDATE_GENERATOR_ITEMS(state: GlobalState, payload: { }) {
+  // },
 }

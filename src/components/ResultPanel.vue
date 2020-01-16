@@ -56,6 +56,7 @@
 .result-panel {
   .definition-item {
     margin-bottom: 10px;
+    margin-left: 10px;
   }
 }
 
