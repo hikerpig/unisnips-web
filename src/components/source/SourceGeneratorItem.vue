@@ -3,11 +3,11 @@
   <template>
     <div class="source-generator-item__head d-flex justify-space-between">
       <v-col class="trigger">
-        <v-text-field v-model="item.trigger" label="Trigger" outlined dense>
+        <v-text-field v-model="item.trigger" label="Trigger" outlined dense hide-details>
         </v-text-field>
       </v-col>
       <v-col class="description">
-        <v-text-field v-model="item.description" label="Description" outlined dense>
+        <v-text-field v-model="item.description" label="Description" outlined dense hide-details>
         </v-text-field>
       </v-col>
     </div>

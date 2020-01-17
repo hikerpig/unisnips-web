@@ -1,9 +1,16 @@
 <template>
   <div class="source-generator">
-    <SourceGeneratorItem v-for="item in items" :key="item.id"
-      @change="onItemChange(item)"
-      v-bind="{ item }"
-    />
+    <div class="source-generator__header">
+      <v-col class="body-1">
+        A quick snippet generator
+      </v-col>
+    </div>
+    <div class="source-generator__content">
+      <SourceGeneratorItem v-for="item in items" :key="item.id"
+        @change="onItemChange(item)"
+        v-bind="{ item }"
+      />
+    </div>
   </div>
 </template>
 

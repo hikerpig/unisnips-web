@@ -50,6 +50,7 @@
 #result {
   .CodeMirror {
     padding: 10px;
+    font-size: 14px;
   }
 }
 
@@ -62,7 +63,7 @@
 
 .result-panel__header {
   .row {
-    height: 48px;
+    // height: 48px;
     padding: 0 10px;
   }
   .v-input--selection-controls {

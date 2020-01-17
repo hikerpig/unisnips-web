@@ -18,10 +18,12 @@
 </template>
 
 <style lang="scss">
+.source-panel {
+  background-color: #EEEEEE;
+}
 .source__mark-text {
   background-color: rgba(#FFEE58, 0.4);
 }
-
 </style>
 
 <script lang="ts">
