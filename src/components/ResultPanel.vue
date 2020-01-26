@@ -112,6 +112,7 @@ const TARGET_MODE_MAP = {
   vscode: 'javascript',
   atom: 'coffeescript',
   sublime: 'xml',
+  jetbrains: 'xml',
 }
 
 function getIconImg(name: string) {
@@ -136,6 +137,7 @@ export default class ResultPanel extends Vue {
     { value: 'vscode', label: 'vscode', img: getIconImg('vscode.png') },
     { value: 'sublime', label: 'Sublime Text', img: getIconImg('sublime.png') },
     { value: 'atom', label: 'Atom', img: getIconImg('atom.png')  },
+    { value: 'jetbrains', label: 'JetBrains', img: getIconImg('jetbrains.png')  },
   ]
 
   resultType = 'result'
