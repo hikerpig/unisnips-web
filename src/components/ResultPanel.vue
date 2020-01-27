@@ -140,10 +140,10 @@ export default class ResultPanel extends Vue {
     { value: 'jetbrains', label: 'JetBrains', img: getIconImg('jetbrains.png')  },
   ]
 
-  resultType = 'result'
+  resultType = 'converted'
   // resultType = 'debug' // @@DEBUG:
   resultOptions = [
-    { value: 'result', label: 'Result' },
+    { value: 'converted', label: 'Converted' },
     { value: 'debug', label: 'Debug' },
   ]
 
