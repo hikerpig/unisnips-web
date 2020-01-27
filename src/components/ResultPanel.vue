@@ -164,6 +164,10 @@ export default class ResultPanel extends Vue {
     return this.resultType === 'debug'
   }
 
+  get possibleResultTypes() {
+    return this.resultOptions.map(o => o.value)
+  }
+
   @Watch('target')
   onTargetChange() {
     this.updateByContent(this.source.content)
@@ -171,9 +175,20 @@ export default class ResultPanel extends Vue {
   }
 
   mounted() {
+    this.initByRoute()
     this.initObservers()
     this.initCodeMirror()
     this.updateByContent()
+  }
+
+  initByRoute() {
+    const routeQueryResult = this.$route.query.result as string
+    if (routeQueryResult && this.possibleResultTypes.includes(routeQueryResult)) {
+      this.resultType = routeQueryResult
+    }
+    const newQuery = {...this.$route.query}
+    delete newQuery.result
+    this.$router.replace({ query: newQuery })
   }
 
   initCodeMirror() {
