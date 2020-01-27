@@ -183,12 +183,14 @@ export default class ResultPanel extends Vue {
 
   initByRoute() {
     const routeQueryResult = this.$route.query.result as string
-    if (routeQueryResult && this.possibleResultTypes.includes(routeQueryResult)) {
-      this.resultType = routeQueryResult
+    if (routeQueryResult) {
+      if (this.possibleResultTypes.includes(routeQueryResult)) {
+        this.resultType = routeQueryResult
+      }
+      const newQuery = {...this.$route.query}
+      delete newQuery.result
+      this.$router.replace({ query: newQuery })
     }
-    const newQuery = {...this.$route.query}
-    delete newQuery.result
-    this.$router.replace({ query: newQuery })
   }
 
   initCodeMirror() {
