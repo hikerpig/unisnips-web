@@ -68,7 +68,7 @@ export default class UPlaceholder extends Vue {
   get headerStr() {
     const infoSegs = []
     const { valueType } = this.placeholder
-    if (valueType === 'positional') {
+    if (valueType === 'tabstop') {
       infoSegs.push(`index: ${this.placeholder.index}`)
     } else if (valueType === 'variable') {
       infoSegs.push(`variableName: ${this.placeholder.variable!.name}`)
