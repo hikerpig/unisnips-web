@@ -23,7 +23,7 @@
               <img :src="item.img" class="result-panel__select-img">
               <v-list-item-title v-html=" item.label "></v-list-item-title>
             </template>
-            <template v-slot:selection="{ item, index }">
+            <template v-slot:selection="{ item }">
               <img :src="item.img" class="result-panel__select-img">
               <span class="caption">{{ item.label }}</span>
             </template>
@@ -32,6 +32,16 @@
         <v-col>
           <v-switch dense inset hide-details v-model="shouldAutoGenerate" label="Auto Generate">
           </v-switch>
+        </v-col>
+        <v-col class="result-panel__tools">
+          <v-tooltip bottom>
+            <template v-slot:activator="{ on }">
+              <v-btn fab small color="primary" @click="handleExportClick" v-on="on">
+                <v-icon>mdi-export-variant</v-icon>
+              </v-btn>
+            </template>
+            <span>Export</span>
+          </v-tooltip>
         </v-col>
       </v-row>
     </div>
@@ -43,6 +53,9 @@
         />
       </div>
     </div>
+    <ExportDialog :visible.sync="exportDialogVisible"
+      v-bind="{ definitions, conversionResult }"
+    ></ExportDialog>
   </div>
 </template>
 
@@ -103,6 +116,7 @@ import { GlobalState } from 'src/store/type'
 import { SHP } from 'src/util/paths'
 import { findPosAndItem } from 'src/util/util'
 import DefinitionItem from 'src/components/result/DefinitionItem.vue'
+import ExportDialog from 'src/components/result/ExportDialog.vue'
 
 import 'codemirror/mode/javascript/javascript'
 import 'codemirror/mode/coffeescript/coffeescript'
@@ -122,6 +136,7 @@ function getIconImg(name: string) {
 @Component({
   components: {
     DefinitionItem,
+    ExportDialog,
   }
 })
 export default class ResultPanel extends Vue {
@@ -131,7 +146,11 @@ export default class ResultPanel extends Vue {
 
   target = 'vscode'
   shouldAutoGenerate = true
+
   definitions: SnippetDefinition[] = []
+  conversionResult: any = null
+
+  exportDialogVisible = false
 
   targetOptions = [
     { value: 'vscode', label: 'vscode', img: getIconImg('vscode.png') },
@@ -223,6 +242,7 @@ export default class ResultPanel extends Vue {
     })
     // console.log(result)
     this.resultCm.setValue(result.content)
+    this.conversionResult = result
 
     const { definitions } = ULTISNIPS_PLUGIN.parse(content)
     console.debug('definitions', definitions)
@@ -233,6 +253,10 @@ export default class ResultPanel extends Vue {
     const mode = (TARGET_MODE_MAP as any)[this.target]
     // console.log('mode', mode)
     this.resultCm.setOption('mode', mode)
+  }
+
+  handleExportClick() {
+    this.exportDialogVisible = true
   }
 }
 </script>
