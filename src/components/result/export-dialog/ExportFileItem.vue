@@ -13,7 +13,7 @@
         </v-card-actions>
       </v-card-title>
       <v-card-text>
-        <pre>{{ fileItem.content }}</pre>
+        <pre ref="codeEle" :class="[`language-${codeLanguage}`]">{{ fileItem.content }}</pre>
       </v-card-text>
     </v-card>
   </div>
@@ -34,6 +34,7 @@
 <script lang="ts">
 import { Component, Prop, Watch } from 'vue-property-decorator'
 import Vue from 'vue'
+import hljs from 'highlight.js'
 
 import { FileItem } from '../defs.d'
 
@@ -41,10 +42,21 @@ import { FileItem } from '../defs.d'
 
 })
 export default class ExportFileItem extends Vue {
+  $refs: {
+    codeEle: HTMLElement
+  }
   @Prop() fileItem: FileItem
 
   get downloadHref() {
     return `data:text/plain;charset=utf-8,${encodeURIComponent(this.fileItem.content)}`
+  }
+
+  get codeLanguage() {
+    return this.fileItem.filename.split('.').pop()
+  }
+
+  mounted() {
+    hljs.highlightBlock(this.$refs.codeEle)
   }
 }
 </script>

@@ -11,6 +11,9 @@ module.exports = {
         alias: {
           src: resolve('src')
         }
+      },
+      externals: {
+        'highlight.js': 'hljs'
       }
     }
   },

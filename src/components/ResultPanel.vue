@@ -54,7 +54,7 @@
       </div>
     </div>
     <ExportDialog :visible.sync="exportDialogVisible"
-      v-bind="{ definitions, conversionResult }"
+      v-bind="{ syncInfo }"
     ></ExportDialog>
   </div>
 </template>
@@ -110,7 +110,7 @@ import Vue from 'vue'
 import CodeMirror, { Editor } from 'codemirror'
 
 import { SnippetDefinition, ParseOptions } from '@unisnips/core'
-import { convert } from '@unisnips/unisnips'
+import { convert, sync } from '@unisnips/unisnips'
 import ULTISNIPS_PLUGIN from '@unisnips/ultisnips'
 import { GlobalState } from 'src/store/type'
 import { SHP } from 'src/util/paths'
@@ -165,6 +165,7 @@ export default class ResultPanel extends Vue {
     { value: 'converted', label: 'Converted' },
     { value: 'debug', label: 'Debug' },
   ]
+  syncInfo: any = null
 
   generation = {
     content: '',
@@ -256,6 +257,10 @@ export default class ResultPanel extends Vue {
   }
 
   handleExportClick() {
+    this.syncInfo = sync({
+      inputContent: this.source.content,
+      target: this.target,
+    })
     this.exportDialogVisible = true
   }
 }
