@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.3.0](https://github.com/hikerpig/unisnips-web/compare/v0.2.0...v0.3.0) (2020-02-03)
+
+
+### Features
+
+* :arrow_up: Update to @unisnips/* 0.7.0-alpha.0 ([27a939f](https://github.com/hikerpig/unisnips-web/commit/27a939f))
+* assign ResultPanel initial 'resultType' by `route.query.result` ([9ceeb22](https://github.com/hikerpig/unisnips-web/commit/9ceeb22))
+* Get sync info from [@unisnips](https://github.com/unisnips) , and download generated files in ExpoExportDialog ([3948d3d](https://github.com/hikerpig/unisnips-web/commit/3948d3d))
+
 ## 0.2.0 (2020-01-26)
 
 
