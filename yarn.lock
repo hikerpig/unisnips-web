@@ -1123,66 +1123,66 @@
   dependencies:
     "@types/yargs-parser" "*"
 
-"@unisnips/atom@^0.7.0":
-  version "0.7.0"
-  resolved "https://registry.npmjs.org/@unisnips/atom/-/atom-0.7.0.tgz#c3220567ecefedea30cdc649bb01f909979b1fa2"
-  integrity sha512-IhNZ8eW25wyJb5NDLCRycrPhYP/LHKfC5E9CRecQR9T4fm0XMv3KP25HhxdYPQxboznPaMnQ89D4+Hrb8++TeQ==
+"@unisnips/atom@^0.7.1":
+  version "0.7.1"
+  resolved "https://registry.npm.taobao.org/@unisnips/atom/download/@unisnips/atom-0.7.1.tgz?cache=0&sync_timestamp=1580871612846&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40unisnips%2Fatom%2Fdownload%2F%40unisnips%2Fatom-0.7.1.tgz#cac93d40887b0116f7b435c5a0622128d33fc3ef"
+  integrity sha1-ysk9QIh7ARb3tDXFoGIhKNM/w+8=
   dependencies:
-    "@unisnips/core" "^0.7.0"
+    "@unisnips/core" "^0.7.1"
 
-"@unisnips/core@^0.7.0":
-  version "0.7.0"
-  resolved "https://registry.npmjs.org/@unisnips/core/-/core-0.7.0.tgz#720f13c1a529797e4bb4ea6ba3302896ff1aeaa2"
-  integrity sha512-/qHtYOYQpA8WSNrI1N6EYfern7pJ6VBKAuO4mkAIO7hVVEz70clA8X3ziUFn9y/Hos8MHZiIF9Qte1bzt0yMBw==
+"@unisnips/core@^0.7.1":
+  version "0.7.1"
+  resolved "https://registry.npm.taobao.org/@unisnips/core/download/@unisnips/core-0.7.1.tgz?cache=0&sync_timestamp=1580871609550&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40unisnips%2Fcore%2Fdownload%2F%40unisnips%2Fcore-0.7.1.tgz#0adacbf615f9008df73cccb068f16b12ede52f19"
+  integrity sha1-CtrL9hX5AI33PMywaPFrEu3lLxk=
   dependencies:
     "@types/unist" "^2.0.3"
 
-"@unisnips/jetbrains@^0.7.0":
-  version "0.7.0"
-  resolved "https://registry.npmjs.org/@unisnips/jetbrains/-/jetbrains-0.7.0.tgz#6d595d4cfc17f8ac491e65a7bed6922e71b6a419"
-  integrity sha512-2X/hFN4PlGa5K0DaBMkIB9c73zwaPtc1LhXwFs9By6/kile8Go70eu84Ug0eyW2TZhGtULPFJBomohxZWLu9Pw==
+"@unisnips/jetbrains@^0.7.1":
+  version "0.7.1"
+  resolved "https://registry.npm.taobao.org/@unisnips/jetbrains/download/@unisnips/jetbrains-0.7.1.tgz?cache=0&sync_timestamp=1580871612620&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40unisnips%2Fjetbrains%2Fdownload%2F%40unisnips%2Fjetbrains-0.7.1.tgz#74f22f7c069c167afe359757fc0749c20558d5e7"
+  integrity sha1-dPIvfAacFnr+NZdX/AdJwgVY1ec=
   dependencies:
-    "@unisnips/core" "^0.7.0"
+    "@unisnips/core" "^0.7.1"
 
-"@unisnips/sublime@^0.7.0":
-  version "0.7.0"
-  resolved "https://registry.npmjs.org/@unisnips/sublime/-/sublime-0.7.0.tgz#483fed886521a05b00228f4c74c0c9a261ae7f0b"
-  integrity sha512-lxWaMnkBBvAM68ZbVALN/a+jqYaGqg5Lgic+W85Nl4p1wl712pYbliUsyZdc6uR3nESN6eXfiVYln4PyIYvthw==
+"@unisnips/sublime@^0.7.1":
+  version "0.7.1"
+  resolved "https://registry.npm.taobao.org/@unisnips/sublime/download/@unisnips/sublime-0.7.1.tgz?cache=0&sync_timestamp=1580871612637&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40unisnips%2Fsublime%2Fdownload%2F%40unisnips%2Fsublime-0.7.1.tgz#5f5e72e0ecf2b207dd331a43e135dc29848987a3"
+  integrity sha1-X15y4OzysgfdMxpD4TXcKYSJh6M=
   dependencies:
-    "@unisnips/core" "^0.7.0"
+    "@unisnips/core" "^0.7.1"
 
-"@unisnips/ultisnips@^0.7.0":
-  version "0.7.0"
-  resolved "https://registry.npmjs.org/@unisnips/ultisnips/-/ultisnips-0.7.0.tgz#c28bf3bb32aec4bef323f6b08ead1df9b857598f"
-  integrity sha512-rNfxcBFQLcWIHh/Z7362EHBYIc5LFUQ32RaIZ20TibIhuo87g1lM6ymEKZkoQrBng74MLhoP5Dh6mXRizFRetQ==
+"@unisnips/ultisnips@^0.7.1":
+  version "0.7.1"
+  resolved "https://registry.npm.taobao.org/@unisnips/ultisnips/download/@unisnips/ultisnips-0.7.1.tgz?cache=0&sync_timestamp=1580871633155&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40unisnips%2Fultisnips%2Fdownload%2F%40unisnips%2Fultisnips-0.7.1.tgz#8b558255c851d733657fe9d65a7ace24fce94235"
+  integrity sha1-i1WCVchR1zNlf+nWWnrOJPzpQjU=
   dependencies:
     "@bestminr/control-flow" "^0.1.0"
     "@types/lodash.omit" "*"
-    "@unisnips/core" "^0.7.0"
+    "@unisnips/core" "^0.7.1"
     lodash.omit "^4.5.0"
 
-"@unisnips/unisnips@^0.7.0":
-  version "0.7.0"
-  resolved "https://registry.npmjs.org/@unisnips/unisnips/-/unisnips-0.7.0.tgz#2cabcb3c5487a70c6982022aebfd26a6e1cc7b02"
-  integrity sha512-XxJyi5Tc3uyeSEjCypBFSTsxAcRi59X82kHJjRBL+ckHEf8y8OJgUwQc0OYZIXi5byFhez8uzkIvx966Mu7TNA==
+"@unisnips/unisnips@^0.7.1":
+  version "0.7.1"
+  resolved "https://registry.npm.taobao.org/@unisnips/unisnips/download/@unisnips/unisnips-0.7.1.tgz?cache=0&sync_timestamp=1580871619248&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40unisnips%2Funisnips%2Fdownload%2F%40unisnips%2Funisnips-0.7.1.tgz#ea2cb1d797a5f6b90411202eb9426723c0133c14"
+  integrity sha1-6iyx15el9rkEESAuuUJnI8ATPBQ=
   dependencies:
-    "@unisnips/atom" "^0.7.0"
-    "@unisnips/core" "^0.7.0"
-    "@unisnips/jetbrains" "^0.7.0"
-    "@unisnips/sublime" "^0.7.0"
-    "@unisnips/ultisnips" "^0.7.0"
-    "@unisnips/vscode" "^0.7.0"
+    "@unisnips/atom" "^0.7.1"
+    "@unisnips/core" "^0.7.1"
+    "@unisnips/jetbrains" "^0.7.1"
+    "@unisnips/sublime" "^0.7.1"
+    "@unisnips/ultisnips" "^0.7.1"
+    "@unisnips/vscode" "^0.7.1"
     mkdirp "^1.0.3"
     signale "^1.4.0"
     yargs "^15.0.2"
 
-"@unisnips/vscode@^0.7.0":
-  version "0.7.0"
-  resolved "https://registry.npmjs.org/@unisnips/vscode/-/vscode-0.7.0.tgz#35bc358b271c6aa1ce384721f6d2ee0b556f85e4"
-  integrity sha512-qVHz/iZIYcFHcUBY0WEBcuAeI8eQTbZrTgQwlJP0f2U0EqIvhtRmbPNdEX9DX8GQne4HkctPZEWYiVGkHartBw==
+"@unisnips/vscode@^0.7.1":
+  version "0.7.1"
+  resolved "https://registry.npm.taobao.org/@unisnips/vscode/download/@unisnips/vscode-0.7.1.tgz?cache=0&sync_timestamp=1580871612466&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40unisnips%2Fvscode%2Fdownload%2F%40unisnips%2Fvscode-0.7.1.tgz#944ad330f120605b4463a3afe98ab2df76870764"
+  integrity sha1-lErTMPEgYFtEY6Ov6Yqy33aHB2Q=
   dependencies:
     "@types/lodash.omit" "*"
-    "@unisnips/core" "^0.7.0"
+    "@unisnips/core" "^0.7.1"
     lodash.omit "^4.5.0"
 
 "@vue/babel-helper-vue-jsx-merge-props@^1.0.0":
