@@ -1151,26 +1151,26 @@
   dependencies:
     "@unisnips/core" "^0.7.1"
 
-"@unisnips/ultisnips@^0.7.1":
-  version "0.7.1"
-  resolved "https://registry.npm.taobao.org/@unisnips/ultisnips/download/@unisnips/ultisnips-0.7.1.tgz?cache=0&sync_timestamp=1580871633155&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40unisnips%2Fultisnips%2Fdownload%2F%40unisnips%2Fultisnips-0.7.1.tgz#8b558255c851d733657fe9d65a7ace24fce94235"
-  integrity sha1-i1WCVchR1zNlf+nWWnrOJPzpQjU=
+"@unisnips/ultisnips@^0.7.2":
+  version "0.7.2"
+  resolved "https://registry.npm.taobao.org/@unisnips/ultisnips/download/@unisnips/ultisnips-0.7.2.tgz#268060173d27f95df183f10b5c64826c203a4d63"
+  integrity sha1-JoBgFz0n+V3xg/ELXGSCbCA6TWM=
   dependencies:
     "@bestminr/control-flow" "^0.1.0"
     "@types/lodash.omit" "*"
     "@unisnips/core" "^0.7.1"
     lodash.omit "^4.5.0"
 
-"@unisnips/unisnips@^0.7.1":
-  version "0.7.1"
-  resolved "https://registry.npm.taobao.org/@unisnips/unisnips/download/@unisnips/unisnips-0.7.1.tgz?cache=0&sync_timestamp=1580871619248&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40unisnips%2Funisnips%2Fdownload%2F%40unisnips%2Funisnips-0.7.1.tgz#ea2cb1d797a5f6b90411202eb9426723c0133c14"
-  integrity sha1-6iyx15el9rkEESAuuUJnI8ATPBQ=
+"@unisnips/unisnips@^0.7.2":
+  version "0.7.2"
+  resolved "https://registry.npm.taobao.org/@unisnips/unisnips/download/@unisnips/unisnips-0.7.2.tgz#c35ecd2b215426ffd4b16114ed98329bb030e73f"
+  integrity sha1-w17NKyFUJv/UsWEU7Zgym7Aw5z8=
   dependencies:
     "@unisnips/atom" "^0.7.1"
     "@unisnips/core" "^0.7.1"
     "@unisnips/jetbrains" "^0.7.1"
     "@unisnips/sublime" "^0.7.1"
-    "@unisnips/ultisnips" "^0.7.1"
+    "@unisnips/ultisnips" "^0.7.2"
     "@unisnips/vscode" "^0.7.1"
     mkdirp "^1.0.3"
     signale "^1.4.0"

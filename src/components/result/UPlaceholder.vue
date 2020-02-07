@@ -45,6 +45,7 @@ import { Component, Prop, Watch } from 'vue-property-decorator'
 import Vue from 'vue'
 
 import { SnippetDefinition, SnippetPlaceholder, TokenNode } from '@unisnips/core'
+import { TextPosition } from '@unisnips/ultisnips'
 import { Point } from 'unist'
 import { get } from 'lodash'
 
@@ -89,9 +90,19 @@ export default class UPlaceholder extends Vue {
   handleMouseEnter() {
     this.isHover = true
     if (this.marker) {
-      // const bodyPosition = this.placeholder.bodyPosition
       const snipPosition = this.definition.position
-      const positionInFile = this.placeholder.bodyPosition
+      const bodyPosition = this.placeholder.bodyPosition
+      const snipStartInFile = TextPosition.fromUnistPoint(snipPosition.start)
+      const placeholderStartInFile = snipStartInFile.moveWith(
+        TextPosition.fromUnistPoint(bodyPosition.start).add(new TextPosition(1, 0))
+      )
+      const placeholderEndInFile = snipStartInFile.moveWith(
+        TextPosition.fromUnistPoint(bodyPosition.end).add(new TextPosition(1, 0))
+      )
+      const positionInFile = {
+        start: placeholderStartInFile.toUnistPosition(),
+        end: placeholderEndInFile.toUnistPosition(),
+      }
       // console.log('position in file', JSON.stringify(positionInFile))
       this.$store.commit('UPDATE_HIGHLIGHT_ITEMS', {
         items: [
