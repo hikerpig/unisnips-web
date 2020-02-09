@@ -4,8 +4,10 @@
   >
     <header class="d-flex justify-space-between">
       <v-chip label color="yellow accent-4" :title="`trigger:${definition.trigger}`">{{ definition.trigger }}</v-chip>
-      <!-- <b>{{ definition.trigger }}</b> -->
-      <span>{{ definition.description }}</span>
+      <div>
+        <span title="description">{{ definition.description }}</span>
+        <v-chip class="definition-item__flags" title="flags" v-if="definition.flags" label>{{ definition.flags }}</v-chip>
+      </div>
     </header>
     <div v-show="expanded">
       <span>Placeholders: </span>
@@ -29,6 +31,9 @@
   .u-placeholder {
     margin-left: 1em;
   }
+}
+.definition-item__flags {
+  margin-left: 5px;
 }
 </style>
 
