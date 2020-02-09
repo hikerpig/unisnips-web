@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.4.0](https://github.com/hikerpig/unisnips-web/compare/v0.3.0...v0.4.0) (2020-02-09)
+
+
+### Bug Fixes
+
+* :arrow_up: upgrade @unisnips/* to 0.7.2 fix script code position bug ([b0d48a6](https://github.com/hikerpig/unisnips-web/commit/b0d48a6))
+* :arrow_up: upgrade @unisnips/* to 0.8.0 fix nested script code offset bug ([f842f68](https://github.com/hikerpig/unisnips-web/commit/f842f68))
+* :arrow_up: upgrade @unisnips/* to fix script code detection bug ([569f013](https://github.com/hikerpig/unisnips-web/commit/569f013))
+
+
+### Features
+
+* Add snippets source popover to AppHeader ([4968fdc](https://github.com/hikerpig/unisnips-web/commit/4968fdc))
+* show definition flags ([d3e4438](https://github.com/hikerpig/unisnips-web/commit/d3e4438))
+
 ## [0.3.0](https://github.com/hikerpig/unisnips-web/compare/v0.2.0...v0.3.0) (2020-02-03)
 
 
