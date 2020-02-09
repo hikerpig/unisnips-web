@@ -9,7 +9,7 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "@unisnips/unisnips": "^0.7.2",
+    "@unisnips/unisnips": "^0.8.0",
     "core-js": "^3.4.4",
     "jszip": "^3.2.2",
     "outdent": "^0.7.0",
